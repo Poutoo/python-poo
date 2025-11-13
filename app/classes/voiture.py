@@ -13,6 +13,7 @@ class Voiture:
         self.vitesse = 0  # Vitesse initiale de la voiture
 
     # Méthodes d'INSTANCE
+    # self est une refernce vers l'objet qui sera créé à partir de cette classe
     def accelerer(self, increment: int):
         """Augmente la vitesse de la voiture."""
         self.vitesse += increment
@@ -25,3 +26,19 @@ class Voiture:
 
     def afficher_details(self):
         print(f"Marque: {self.marque}, Modèle: {self.modele}, Année: {self.annee}, Vitesse: {self.vitesse} km/h")
+
+    def getRoues(self):
+        """Retourne le nombre de roues de la voiture."""
+        return Voiture.roues
+    
+
+    # Méthode de CLASSE
+    @classmethod
+    def nombre_de_roues(cls):
+        """Retourne le nombre de roues des voitures."""
+        return cls.roues
+    
+    @classmethod
+    def setRoues(cls, nombre: int):
+        """Modifie le nombre de roues des voitures."""
+        cls.roues = nombre
