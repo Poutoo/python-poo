@@ -10,22 +10,22 @@ class Voiture:
         self.marque = marque
         self.modele = modele
         self.annee = annee
-        self.vitesse = 0  # Vitesse initiale de la voiture
+        self.__vitesse = 0  # Vitesse initiale de la voiture
 
     # Méthodes d'INSTANCE
     # self est une refernce vers l'objet qui sera créé à partir de cette classe
     def accelerer(self, increment: int):
         """Augmente la vitesse de la voiture."""
-        self.vitesse += increment
-        print(f"La voiture accélère de {increment} km/h. Vitesse actuelle: {self.vitesse} km/h")
+        self.__vitesse += increment
+        print(f"La voiture accélère de {increment} km/h. Vitesse actuelle: {self.__vitesse} km/h")
     
     def freiner(self, decrement: int):
         """Diminue la vitesse de la voiture."""
-        self.vitesse = max(0, self.vitesse - decrement)
-        print(f"La voiture freine de {decrement} km/h. Vitesse actuelle: {self.vitesse} km/h")  
+        self.__vitesse = max(0, self.__vitesse - decrement)
+        print(f"La voiture freine de {decrement} km/h. Vitesse actuelle: {self.__vitesse} km/h")  
 
     def afficher_details(self):
-        print(f"Marque: {self.marque}, Modèle: {self.modele}, Année: {self.annee}, Vitesse: {self.vitesse} km/h")
+        print(f"Marque: {self.marque}, Modèle: {self.modele}, Année: {self.annee}, Vitesse: {self.__vitesse} km/h")
 
     def getRoues(self):
         """Retourne le nombre de roues de la voiture."""
@@ -45,7 +45,7 @@ class Voiture:
         
     # Methode spéciale __str__
     def __str__(self) -> str:
-        return f"Voiture(marque={self.marque}, modele={self.modele}, annee={self.annee}, vitesse={self.vitesse} km/h)"
+        return f"Voiture(marque={self.marque}, modele={self.modele}, annee={self.annee}, vitesse={self.__vitesse} km/h)"
     
     def __repr__(self) -> str:
         return f"Voiture('{self.marque}', '{self.modele}', {self.annee})"

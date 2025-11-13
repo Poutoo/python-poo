@@ -31,5 +31,9 @@ if __name__ == "__main__":
     print("\nReprésentation de ma_voiture avec __repr__:")
     print(repr(ma_voiture))
     
-    del instance_ma_classe  # Pour déclencher le destructeur
+    # acces à un membre privé
+    print("\nAccès à une prop privée de ma_voiture (non recommandé) :")
+    print("Vitesse actuelle (accès direct) :", ma_voiture._Voiture__vitesse)
+    
+    
     
