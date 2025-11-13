@@ -42,3 +42,10 @@ class Voiture:
     def setRoues(cls, nombre: int):
         """Modifie le nombre de roues des voitures."""
         cls.roues = nombre
+        
+    # Methode spéciale __str__
+    def __str__(self) -> str:
+        return f"Voiture(marque={self.marque}, modele={self.modele}, annee={self.annee}, vitesse={self.vitesse} km/h)"
+    
+    def __repr__(self) -> str:
+        return f"Voiture('{self.marque}', '{self.modele}', {self.annee})"
